@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/its-me-sujan/to-do-app/issues"
   },
-  "homepage": "https://github.com/its-me-sujan/to-do-app#readme"
+  "homepage": "https://github.com/its-me-sujan/to-do-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
