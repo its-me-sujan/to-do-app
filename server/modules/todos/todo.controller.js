@@ -1,6 +1,8 @@
 const TodoModel = require('./todo.model');
 
-const create = (payload) => {};
+const create = (payload) => {
+    return TodoModel.create(payload);
+};
 
 const list = () => {};
 
