@@ -1,6 +1,8 @@
 const SubtaskModel = require('./subtask.model');
 
-const create = (payload) => {};
+const create = (payload) => {
+    return SubtaskModel.create(payload);
+};
 
 const list = () => {};
 
