@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const 
+router.get('/', (req, res, next) => {
+    res.json({msg:"TODOS API"})
+});
 
 module.exports = router;
