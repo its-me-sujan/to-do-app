@@ -9,10 +9,12 @@ const list = () => {
 };
 
 const getById = (id) => {
-    return TodoModel.findone({_id:id});
+    return TodoModel.findone({_id: id});
 };
 
-const updateById = (id, payload) => {};
+const updateById = (id, payload) => {
+    return TodoModel.updateOne({_id: id}, payload);
+};
 
 const remove = (id) => {};
 
