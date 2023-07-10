@@ -8,7 +8,9 @@ const list = () => {
     return TodoModel.find();
 };
 
-const getById = (id) => {};
+const getById = (id) => {
+    return TodoModel.findone({_id:id});
+};
 
 const updateById = (id, payload) => {};
 
