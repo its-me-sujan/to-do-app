@@ -16,6 +16,8 @@ const updateById = (id, payload) => {
     return TodoModel.updateOne({_id: id}, payload);
 };
 
-const remove = (id) => {};
+const remove = (id) => {
+    return TodoModel.deleteOne({_id: id});
+};
 
 module.exports = {create, list, getById, updateById, remove};
