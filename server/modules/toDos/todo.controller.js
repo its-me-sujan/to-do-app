@@ -5,7 +5,7 @@ const create = (payload) => {
 };
 
 const list = () => {
-    return TodoModel.list();
+    return TodoModel.find();
 };
 
 const getById = (id) => {};
