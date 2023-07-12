@@ -8,4 +8,4 @@ The Todo App is open-source software licensed under the MIT license. Feel free t
 
 Contact
 
-If you have any questions or suggestions regarding the Todo App, please feel free to contact the project maintainer at sujanshrestha0927@gmail.com.
+If you have any questions or suggestions regarding the Todo App, please feel free to contact the project maintainer at sujanshrestha0927@gmail.com. 
