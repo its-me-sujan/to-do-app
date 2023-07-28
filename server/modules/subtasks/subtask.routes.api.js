@@ -10,8 +10,8 @@ router.get('/', async (req, res, next) => {
 
 // create
 router.post('/', async(req, res) => {
-    const todoResult = await subtaskController.create(req.body);
-    res.json({data: todoResult});
+    const result = await subtaskController.create(req.body);
+    res.json({data: result});
 });
 
 // read by id
