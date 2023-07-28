@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const subtaskController = require('./subtask.controller')
 
-router.use('/', (req, res, next) => {
+router.get('/', (req, res, next) => {
     res.json({msg:"subtasks API"})
 });
 
