@@ -1,0 +1,25 @@
+1. title component
+2. todo component
+    a. add new task button
+    b. input
+    c. label
+3. list data component
+    a. checkbox
+    b. task name
+    c. delete button
+    d. add subtask (todo component) reusable
+4. conditional rendering
+    a. if tesk, list the task
+    b. else, "no subtasks found..." alert
+5. notification popup
+
+
+state mgmt-> reduzz, zustand (X)
+hooks-> custom Hook
+context(X)
+
+
+react -> hooks
+UI -> react -bootstrap
+            -tailwind
+            -material UI
