@@ -1,12 +1,12 @@
 import React from 'react'
 
 export default function Element() {
-  const shoot = () => {
-    alert('goal');
+  const shoot = (a) => {
+    alert(a);
   }
     return (
     <>
-        <button onClick={shoot}>Take a shoot!</button>
+        <button onClick={()=>shoot('Goal')}>Take a shoot!</button>
     </>
   )
 }
