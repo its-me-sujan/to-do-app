@@ -1,10 +1,15 @@
-export default function Element() {
-  const shoot = (a) => {
-    alert(a);
+function MissedGoal() {
+  return <h1>MISSED!</h1>
+}
+
+function MadeGoal() {
+  return <h1>GOAL!</h1>
+}
+
+export default function Example(props) {
+  const isGoal = props.isGoal;
+  if(isGoal) {
+    return <MadeGoal/>;
   }
-    return (
-    <>
-        <button onClick={()=>shoot('Goal')}>Take a shoot!</button>
-    </>
-  )
+  return <MissedGoal/>;
 }
