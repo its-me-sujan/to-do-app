@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
 // create
 router.post('/', async(req, res) => {
     const results = await subtaskController.create(req.body);
-    res.json({data: result});
+    res.json({data: results});
 });
 
 // read by id
