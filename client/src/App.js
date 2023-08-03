@@ -4,6 +4,7 @@ import Garage from "./components/Garage";
 import Goal from "./components/Goal";
 import FavoriteColor from "./components/FavoriteColor";
 import CarHook from "./components/CarHook";
+import Timer from "./components/Timer";
 
 function App() {
   const cars = ['Ford', 'BMW', 'Audi'];
@@ -15,6 +16,7 @@ function App() {
       <Goal isGoal = {true} />
       <FavoriteColor />
       <CarHook />
+      <Timer />
     </>
   </>;
 }
