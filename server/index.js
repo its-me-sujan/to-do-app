@@ -9,10 +9,10 @@ mongoose.connect('mongodb://localhost:27017/to-do-app').then(() => {
 
 const app = express();
 const indexRouter = require('./routes');
-const PORT = 8700;
+const PORT = 3900;
 
  
-
+app.use(cors());
 app.use(express.json());
 app.use('/',indexRouter);
 
