@@ -1,25 +1,44 @@
-import React from "react";
-import { Accordion, Alert, Form } from "react-bootstrap";
+import { Accordion } from "react-bootstrap";
+import MsgAlert from "./Alert";
+import ListSubtasks from "./ListSubtask";
+import AddSubtask from "./AddSubtask.js";
+import { API_SERVER } from "../constants";
 
-export default function ListTodo() {
+export default function ListTodo(props) {
+  const { todos } = props;
+
   return (
     <>
-      <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>
-            <Form.Group>
-                <input
-                    type="checkbox"
-                />
-                <>todoTitle</>
-            </Form.Group>
-          </Accordion.Header>
-          <Accordion.Body>
-            subtask
-          </Accordion.Body>
-        </Accordion.Item>
-        <Alert variant="primary">No Todo Found...</Alert> 
-      </Accordion>
+      {todos && todos.length > 0 ? (
+        <>
+          <Accordion defaultActiveKey={["0"]} alwaysOpen>
+            {todos.map((todo) => {
+              return (
+                <Accordion.Item key = {todo?._id} eventKey={todo?._id}>
+                  <Accordion.Header>{todo?.title}</Accordion.Header>
+                  <Accordion.Body>
+                    {todo?.subtasks && todo?.subtasks.length > 0 ? (
+                      <ListSubtasks subtasks={todo?.subtasks}/>
+                    ):(
+                      <MsgAlert msg="No Subtask Found. Add one to get started..." />
+                    )}
+                    <AddSubtask 
+                      todo={todo}
+                      label="Add new Subtask"
+                      placeholder="Eg: Open Notebook"
+                      url={`${API_SERVER}/subtasks`}
+                    />
+                  </Accordion.Body>
+                </Accordion.Item>
+              );
+            })}
+          </Accordion>
+        </>
+      ) : (
+        <>
+          <MsgAlert msg="No Task Found. Add one to get started..." />
+        </>
+      )}
     </>
   );
 }

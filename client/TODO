@@ -9,7 +9,7 @@
     c. delete button
     d. add subtask (todo component) reusable
 4. conditional rendering
-    a. if tesk, list the task
+    a. if task, list the task
     b. else, "no subtasks found..." alert
 5. notification popup
 
