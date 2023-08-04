@@ -5,7 +5,7 @@ import Title from "./components/Title";
 import Todo from "./pages/Todo";
 
 function App() {
-  return <>
+  return (
     <>
       <Container>
         <Row>
@@ -17,7 +17,7 @@ function App() {
         </Row>
       </Container>
     </>
-  </>;
+  );
 }
 
 export default App;
