@@ -1,10 +1,13 @@
-import { Form, InputGroup, Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+
 import { useState, useContext } from "react";
 import { DataContext } from "../contexts";
 
 import MsgAlert from "./Alert";
 
-function AddTodo(props) {
+function AddItem(props) {
   const { post, loading, error } = useContext(DataContext);
   const { url, label, placeholder } = props;
   const [task, setTask] = useState({
@@ -14,8 +17,8 @@ function AddTodo(props) {
   const handleClick = async () => {
     const payload = task;
     await post(url, payload);
-    setTask((prev) =>{
-        return { ...prev, title:""};
+    setTask((prev) => {
+      return { ...prev, title: "" };
     });
   };
 
@@ -42,4 +45,4 @@ function AddTodo(props) {
   );
 }
 
-export default AddTodo;
+export default AddItem;

@@ -1,33 +1,35 @@
-import axios from 'axios';
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const useAxiosFetch = (url) => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+const useFetchAPI = (url) => {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        let isMounted = false;
-        setLoading(true);
-        const fetchData = async () => {
-            isMounted = true;
-            try{
-                const {data} = await axios(url);
-                if(isMounted && data){
-                    setLoading(false);
-                    setData(data.data);
-                }
-            } catch (error) {
-                setLoading(false);
-                setError(error);
-            }
-        };
-        fetchData();
-        
-        return () => {isMounted = false};
-    }, [url]);
+  useEffect(() => {
+    let isMounted = true; // Flag to check if the component is still mounted
+    // Function to fetch data from the API
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(url);
+        if (isMounted) {
+          setData(data?.data);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        if (isMounted) {
+          setError(error);
+          setIsLoading(false);
+        }
+      }
+    };
+    fetchData(); // Call the fetchData function when the component mounts
+    // Cleanup function to cancel the request and avoid memory leaks
+    return () => {
+      isMounted = false; // Set the flag to false when the component is unmounted
+    };
+  }, [url]); // Re-run the effect when the URL changes
+  return { data, isLoading, error };
+};
 
-    return {data, loading, error};
-}
-
-export default useAxiosFetch;
+export default useFetchAPI;
